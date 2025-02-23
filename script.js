@@ -34,6 +34,7 @@ const diceOutcomes = {
 // DOM Elements
 const gameDisplay = document.getElementById("game-display");
 const playerInput = document.getElementById("player-input");
+const hud = document.getElementById("hud");
 
 function rollDice() {
     return Math.floor(Math.random() * 10) + 1; // 1-10 scale
@@ -168,7 +169,7 @@ function displayResponse(outcome, response) {
 }
 
 function updateHUD() {
-    const hud = `
+    const hudText = `
         HUD:
         Hunger: ${gameState.player.hunger}/100
         Thirst: ${gameState.player.thirst}/100
@@ -183,8 +184,7 @@ function updateHUD() {
         Backpack: ${gameState.player.backpack.join(", ") || "Empty"} (${gameState.player.backpack.length}/10)
         Wagon: ${gameState.player.wagon ? gameState.player.wagon.join(", ") || "Empty" : "None"} (${gameState.player.wagon ? gameState.player.wagon.length : 0}/20)
     `;
-    gameDisplay.innerHTML += `<span class="yellow">${hud}</span><br>`;
-    gameDisplay.scrollTop = gameDisplay.scrollHeight;
+    hud.innerHTML = `<span class="yellow">${hudText}</span>`;
 }
 
 function gameOver(message) {
