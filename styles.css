@@ -14,6 +14,21 @@ body {
     max-width: 800px;
 }
 
+.terminal-hud {
+    background-color: #003300;
+    color: #ffff00;
+    padding: 10px;
+    border: 2px solid #00ff00;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    height: 200px;
+    overflow-y: auto;
+}
+
 .terminal {
     background-color: #003300;
     color: #ffff00;
@@ -21,7 +36,7 @@ body {
     height: 400px;
     overflow-y: auto;
     border: 2px solid #00ff00;
-    margin-bottom: 10px;
+    margin-top: 230px; /* Space for HUD */
     white-space: pre-wrap;
     font-size: 14px;
 }
@@ -33,6 +48,7 @@ body {
     color: #00ff00;
     border: 1px solid #00ff00;
     font-family: 'Courier New', Courier, monospace;
+    margin-top: 10px;
 }
 
 button {
